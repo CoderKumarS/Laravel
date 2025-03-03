@@ -94,3 +94,8 @@ Route::get('/homeMulti', function () {
         'X-Custom-header-3' => 'Mala',
     ]);
 });
+
+Route::get('/head', function ($name = 'sara', $age = 20) {
+    return response()->view('head', compact('name', 'age'))
+        ->header('Content-Type', 'text/plain');
+});
